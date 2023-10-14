@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "simulation": "npm run simulate-1 && npm run simulate-2 && npm run simulate-3 && npm run simulate-4",
+    "simulate-1": "node src/index.js src/data/test-1",
+    "simulate-2": "node src/index.js src/data/test-2",
+    "simulate-3": "node src/index.js src/data/test-3",
+    "simulate-4": "node src/index.js src/data/test-4"
   },
   "author": "Thabang Khoza",
   "license": "ISC"
