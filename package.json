@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node src/index.js",
     "simulation": "npm run simulate-1 && npm run simulate-2 && npm run simulate-3 && npm run simulate-4",
     "simulate-1": "node src/index.js src/data/test-1",
@@ -14,5 +14,8 @@
     "simulate-4": "node src/index.js src/data/test-4"
   },
   "author": "Thabang Khoza",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }

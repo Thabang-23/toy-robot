@@ -51,7 +51,7 @@ npm install
 To run all the tests, run the following command:
 
 ```
-npm test
+node --experimental-vm-modules node_modules/jest/bin/jest.js
 ```
 
 ## Running Robot Simulation
