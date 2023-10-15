@@ -21,7 +21,7 @@ export class Robot {
 
   place(x, y, direction) {
     if (!this._table.isWithinRange(x, y)) {
-      return
+      throw new Error("Robot has exceeded the range of Table.")
     }
     this._x = x
     this._y = y
@@ -31,11 +31,11 @@ export class Robot {
 
   move() {
     if (!this._isPlaced) {
-      return
+      throw new Error("Robot is not placed on the Table")
     }
     const { x, y } = processNextMove(this._direction)
     if (!this._table.isWithinRange(x + this._x, y + this._y)) {
-      return
+      throw new Error("Robot has exceeded the range of Table.")
     }
     this._x += x
     this._y += y
@@ -43,21 +43,21 @@ export class Robot {
 
   left() {
     if (!this._isPlaced) {
-      return
+      throw new Error("Robot is not placed on the Table")
     }
     this._direction = turnLeft(this._direction)
   }
 
   right() {
     if (!this._isPlaced) {
-      return
+      throw new Error("Robot is not placed on the Table")
     }
     this._direction = turnRight(this._direction)
   }
 
   report = () => {
     if (!this._isPlaced) {
-      return
+      throw new Error("Robot is not placed on the Table")
     }
     console.log(`Output: ${this._x},${this._y},${this._direction}`)
   }

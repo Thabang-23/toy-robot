@@ -11,31 +11,28 @@ export const startSimulation = async () => {
 
     if (fileName) {
       const filePath = path.resolve(fileName)
+      // read commands from the file
+      const commands = await readCommand(filePath)
 
-      try {
-        // read commands from the file
-        const commands = await readCommand(filePath)
+      // validate the commands
+      const validCommands = commands.map(parseCommand)
 
-        // validate the commands
-        const validCommands = commands.map(parseCommand)
+      // create a table of dimenstion 5 x 5 units
+      const table = new Table(5, 5)
 
-        // create a table of dimenstion 5 x 5 units
-        const table = new Table(5, 5)
+      // initalize a robot with a table
+      const robot = new Robot(table)
 
-        // initalize a robot with a table
-        const robot = new Robot(table)
-
-        // execute commands
-        validCommands.forEach(cmd => robot.run(cmd))
-      } catch (error) {
-        throw new Error(`Error: ${error}`)
+      // execute commands
+      for (let i = 0; i < validCommands.length; i++) {
+        robot.run(validCommands[i]);
       }
     } else {
       console.log(`Please provide a fileName to run simulation.
     For example: npm start ./src/tests/data/simulation-1`)
     }
   } catch (error) {
-    console.error("Oops! Something went wrong.", error)
+    console.error(error)
     console.log(getInstruction())
   }
 }

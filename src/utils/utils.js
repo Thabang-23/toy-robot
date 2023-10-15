@@ -1,5 +1,8 @@
 import fs from "fs"
 
+/**
+ * Read commands from text file
+ */
 export const readCommand = filePath =>
   new Promise((resolve, reject) => {
     fs.readFile(filePath, "utf8", (error, data) => {
