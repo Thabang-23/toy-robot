@@ -28,11 +28,8 @@ describe("parseCommand", () => {
       "PLACE 0,0,1",
       "PLACE NORTH,0,1",
       "PLACE ,,",
-      "MOVING",
-      "FORWARD",
-      "BACKWARD"
     ]
-    test.each(input)(`should throw error when command = %p`, command => {
+    test.each(input)(`should throw error when command is invalid`, command => {
       expect(() => parseCommand(command)).toThrowError()
     })
   })

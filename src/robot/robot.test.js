@@ -45,9 +45,9 @@ describe("Robot tests", () => {
         "should not place the robot at ($x,$y) facing $direction ",
         ({ x, y, direction }) => {
           robot.place(x, y, direction)
-          expect(robot.x).toThrow();
-          expect(robot.y).toThrowError("Robot has exceeded the range of Table.")
-          expect(robot.direction).toThrowError("Robot has exceeded the range of Table.")
+          expect(robot.x).toBeUndefined();
+          expect(robot.y).toBeUndefined();
+          expect(robot.direction).toBeUndefined();
         }
       )
     })

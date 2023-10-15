@@ -36,7 +36,7 @@ git clone https://github.com/Thabang-23/toy-robot.git
 2.  Navigate to the project directory:
 
 ```
-cd toy-robot-challenge
+cd toy-robot
 ```
 
 3.  Install the required dependencies:

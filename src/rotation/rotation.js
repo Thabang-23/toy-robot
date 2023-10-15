@@ -1,6 +1,5 @@
 /**
  * Rotates the robot 90 degrees in the chosen direction.
- * Rotation makes robot face a new direction.
  */
 export const rotation = {
   EAST: {

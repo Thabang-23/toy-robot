@@ -25,7 +25,7 @@ export const startSimulation = async () => {
 
       // execute commands
       for (let i = 0; i < validCommands.length; i++) {
-        robot.run(validCommands[i]);
+        robot.start(validCommands[i]);
       }
     } else {
       console.log(`Please provide a fileName to run simulation.

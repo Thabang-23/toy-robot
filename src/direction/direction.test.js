@@ -17,7 +17,7 @@ describe("parseDirection", () => {
 
   describe("When a direction is invalid", () => {
     const input = ["NORTHERN", "SOUTHERN", "WESTERMN", "", "-", "_"]
-    test.each(input)("should throw error when text = %p", text => {
+    test.each(input)("should throw error when text is invalid", text => {
       expect(() => parseDirection(text)).toThrowError(
         `Invalid Direction: ${text}`
       )

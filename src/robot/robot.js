@@ -31,7 +31,7 @@ export class Robot {
 
   move() {
     if (!this._isPlaced) {
-      throw new Error("Robot is not placed on the Table")
+      throw new Error("Robot is not placed on the Table.")
     }
     const { x, y } = processNextMove(this._direction)
     if (!this._table.isWithinRange(x + this._x, y + this._y)) {
@@ -43,26 +43,26 @@ export class Robot {
 
   left() {
     if (!this._isPlaced) {
-      throw new Error("Robot is not placed on the Table")
+      throw new Error("Robot is not placed on the Table.")
     }
     this._direction = turnLeft(this._direction)
   }
 
   right() {
     if (!this._isPlaced) {
-      throw new Error("Robot is not placed on the Table")
+      throw new Error("Robot is not placed on the Table.")
     }
     this._direction = turnRight(this._direction)
   }
 
   report = () => {
     if (!this._isPlaced) {
-      throw new Error("Robot is not placed on the Table")
+      throw new Error("Robot is not placed on the Table.")
     }
     console.log(`Output: ${this._x},${this._y},${this._direction}`)
   }
 
-  run(command) {
+  start(command) {
     switch (command.type) {
       case "PLACE":
         this.place(command.x, command.y, command.direction)

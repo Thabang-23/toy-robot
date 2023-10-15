@@ -38,7 +38,7 @@ describe("LEFT & RIGHT Action Test", () => {
       undefined
     ]
     test.each(input)(
-      "should throw error when the direction is invalid (direction = %p)",
+      "should throw error when the direction is invalid",
       direction => {
         expect(() => turnLeft(direction)).toThrowError(
           `Invalid Direction: ${direction}`
